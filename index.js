@@ -161,8 +161,7 @@ function clickHandler(e){
          resultRef.innerText = "It is palindrome"
         }
         else{
-            var [ctr, nextDate] = getNextPalindromeDate(date);
-            resultRef.innerText = 'It is Not a palindrome'
+             resultRef.innerText = 'It is Not a palindrome'
         }
     }
 }
