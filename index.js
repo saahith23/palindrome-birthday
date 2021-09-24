@@ -68,12 +68,87 @@ function checkPalindromeForAllDateFormts(date){
     }
     return flag;
 
-     var date = {
-
-        day:6,
-        month:11,
-        year:2011,
-    
-    };
-    console.log(checkPalindromeForAllDateFormts(date));
+     
 }
+
+function isLeapYear(year){
+    if(year% 400===0){
+        return true;
+    }
+    if(year%100===0){
+        return false;
+    }
+    if (year%4===0){
+        return true;
+    }
+    return false;
+}
+
+
+
+
+function getNextDate(date){
+var day= date.day+1;
+var month = date.month;
+var year = date.year;
+
+var daysInMonth =[31, 28,31,30,31,30,31,31, 30,31,30,31];
+
+if(month===2)
+{
+ if(isLeapYear(year))
+ {
+     if(day>29)
+     {
+         day = 1;
+         month++;
+     }
+     else
+     {
+         if(day> 28)
+         {
+             day=1;
+             month++;
+         }
+     }
+ }
+
+else 
+{
+    if (day > daysInMonth0[month - 1])
+    {
+        day =1;
+        month++;
+    }
+
+    }
+
+    if (month> 12)
+    {
+        month =1;
+        year++;
+    }
+    return
+    {
+        day: day,
+        month: month,
+        year: year
+    };
+}
+}
+
+
+
+
+function getNextPalindromeDate(date){
+
+}
+
+var date = {
+
+    day:12,
+    month:11,
+    year:2011,
+
+};
+console.log(checkPalindromeForAllDateFormts(year));
