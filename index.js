@@ -142,11 +142,7 @@ return [ctr , nextDate];
 
 }
 
-var date = {
+var  dateInputRef = document.querySelector("#body-input");
+var showBtnRef = document.querySelector("#button");
 
-    day:28,
-    month:2,
-    year:2020,
-
-};
-console.log(getNextPalindromeDate(date));
+showBtnRef.addEventListener('click')
