@@ -85,8 +85,6 @@ function isLeapYear(year){
 }
 
 
-
-
 function getNextDate(date){
 var day= date.day+1;
 var month = date.month;
@@ -94,61 +92,62 @@ var year = date.year;
 
 var daysInMonth =[31, 28,31,30,31,30,31,31, 30,31,30,31];
 
-if(month===2)
-{
- if(isLeapYear(year))
+ if(month===2)
  {
-     if(day>29)
-     {
-         day = 1;
-         month++;
-     }
-     else
-     {
-         if(day> 28)
-         {
-             day=1;
-             month++;
-         }
-     }
- }
-
-else 
-{
-    if (day > daysInMonth0[month - 1])
-    {
+ if(isLeapYear(year)){
+    if(day >29){
         day =1;
         month++;
     }
-
+ }
+ else{
+    if(day>28){
+        day =1;
+        month++;
     }
+ }
+ }
 
-    if (month> 12)
-    {
-        month =1;
-        year++;
+ else{
+    if(day >daysInMonth[month - 1]){
+        day =1;
+        month++;
     }
-    return
-    {
-        day: day,
-        month: month,
-        year: year
-    };
+ }
+  if(month >12){
+      month =1;
+      year++;
+  }
+
+  return{
+      day: day,
+      month: month,
+      year: year
+  };
 }
-}
+
 
 
 
 
 function getNextPalindromeDate(date){
-
+ var ctr =0;
+ var nextDate = gettingNextDate(date);
+  while(1){
+      ctr++;
+      var isPalindrome = checkPalindromeForAllDateFormts(nextDate);
+      if (isPalindrome){
+          break;
+      }
+      nextDate = getNextDate(nextDate);
+  }
 }
 
 var date = {
 
-    day:12,
-    month:11,
-    year:2011,
+    day:28,
+    month:02,
+    year:2020,
 
 };
-console.log(checkPalindromeForAllDateFormts(year));
+console.log(getNextDate(date));
