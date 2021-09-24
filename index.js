@@ -144,5 +144,27 @@ return [ctr , nextDate];
 
 var  dateInputRef = document.querySelector("#body-input");
 var showBtnRef = document.querySelector("#button");
+var resultRef = document.querySelector("#output");
 
-showBtnRef.addEventListener('click')
+function clickHandler(e){
+    var bdayStr = dateInputRef.value;
+    if (bdayStr !==''){
+        var listOfDates = bdayStr.split('-');
+        var date ={
+            day :Number(listOfDates[2]),
+            month: Number(listOfDates[1]),
+            year: Number(listOfDates[0])
+        };
+        var isPalindrome =checkPalindromeForAllDateFormts(date);
+        if(isPalindrome);
+        {
+         resultRef.innerText = "It is palindrome"
+        }
+        else{
+            var [ctr, nextDate] = getNextPalindromeDate(date);
+            resultRef.innerText = 'It is Not a palindrome'
+        }
+    }
+}
+
+showBtnRef.addEventListener('click', clickHandler);
