@@ -127,12 +127,9 @@ var daysInMonth =[31, 28,31,30,31,30,31,31, 30,31,30,31];
 }
 
 
-
-
-
 function getNextPalindromeDate(date){
  var ctr =0;
- var nextDate = gettingNextDate(date);
+ var nextDate = getNextDate(date);
   while(1){
       ctr++;
       var isPalindrome = checkPalindromeForAllDateFormts(nextDate);
@@ -141,13 +138,15 @@ function getNextPalindromeDate(date){
       }
       nextDate = getNextDate(nextDate);
   }
+return [ctr , nextDate];
+
 }
 
 var date = {
 
     day:28,
-    month:02,
+    month:2,
     year:2020,
 
 };
-console.log(getNextDate(date));
+console.log(getNextPalindromeDate(date));
