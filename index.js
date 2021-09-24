@@ -53,9 +53,27 @@ function getAllDatesFormats(date){
 
 }
 
-var date ={
-    day:2,
-    month:6,
-    year:2021,
+
+function checkPalindromeForAllDateFormts(date){
+    var listOfPalindromes= getAllDatesFormats(date);
+
+ var flag=false;
+
+    for (var i=0; i<listOfPalindromes.length; i++)
+    {
+        if(isPalindrome(listOfPalindromes[i])){
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+
+    var date = {
+
+        day:6,
+        month:3,
+        year:2063,
+    
+    };
+    console.log(checkPalindromeForAllDateFormts(date));
 }
-console.log(getAllDatesFormats(date));
