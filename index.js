@@ -156,12 +156,15 @@ function clickHandler(e){
             year: Number(listOfDates[0])
         };
         var isPalindrome =checkPalindromeForAllDateFormts(date);
-        if(isPalindrome);
+
+        if(isPalindrome)
         {
          resultRef.innerText = "It is palindrome"
         }
         else{
-             resultRef.innerText = 'It is Not a palindrome'
+            var [ctr, nextDate] = getNextPalindromeDate(date);
+
+             resultRef.innerText = "The next palindrome is" ${nextDate.day}-${nextDate.month}-${nextDate.year}", you missed it by "${ctr}"" days!"
         }
     }
 }
