@@ -68,11 +68,11 @@ function checkPalindromeForAllDateFormts(date){
     }
     return flag;
 
-    var date = {
+     var date = {
 
         day:6,
         month:3,
-        year:2063,
+        year:2021,
     
     };
     console.log(checkPalindromeForAllDateFormts(date));
